@@ -1,0 +1,8 @@
+# Arquivos Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ambientes virtuais
+venv/
+env/
