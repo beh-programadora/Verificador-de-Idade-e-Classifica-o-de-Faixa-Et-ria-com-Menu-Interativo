@@ -1,0 +1,6 @@
+Idade,Resultado_Maioridade,Faixa_Etaria
+10,Você é menor de idade.,Menor de idade.
+15,Você é menor de idade.,Adolescente.
+18,Você é maior de idade.,Adulto.
+30,Você é maior de idade.,Adulto.
+65,Você é maior de idade.,Idoso.
