@@ -1,0 +1,62 @@
+def verificar_maioridade(idade):
+    """Verifica se a pessoa é maior ou menor de idade."""
+    if idade >= 18:
+        return "Você é maior de idade."
+    else:
+        return "Você é menor de idade."
+
+def classificar_faixa_etaria(idade):
+    """Classifica a faixa etária da pessoa."""
+    if idade < 13:
+        return "Menor de idade."
+    elif 13 <= idade <= 17:
+        return "Adolescente."
+    elif 18 <= idade <= 64:
+        return "Adulto."
+    else:
+        return "Idoso."
+
+def validar_entrada_inteiro(mensagem):
+    """Valida se a entrada do usuário é um número inteiro válido."""
+    while True:
+        try:
+            valor = int(input(mensagem))
+            if valor < 0:
+                raise ValueError("A idade não pode ser negativa.")
+            return valor
+        except ValueError as e:
+            print(f"Entrada inválida: {e}. Por favor, tente novamente.")
+
+def menu():
+    """Exibe o menu e solicita a escolha do usuário."""
+    print("\nMenu:")
+    print("1. Verificar maioridade")
+    print("2. Classificar faixa etária")
+    print("3. Sair")
+    while True:
+        try:
+            opcao = int(input("Escolha uma opção (1, 2 ou 3): "))
+            if opcao in [1, 2, 3]:
+                return opcao
+            else:
+                print("Opção inválida! Escolha novamente.")
+        except ValueError:
+            print("Entrada inválida! Digite um número válido.")
+
+def main():
+    """Função principal que controla o fluxo do programa."""
+    while True:
+        opcao = menu()
+        if opcao == 1:
+            idade = validar_entrada_inteiro("Digite sua idade: ")
+            print(verificar_maioridade(idade))
+        elif opcao == 2:
+            idade = validar_entrada_inteiro("Digite sua idade: ")
+            print(classificar_faixa_etaria(idade))
+        elif opcao == 3:
+            print("Encerrando o programa. Até mais!")
+            break
+
+# Executa o programa
+if __name__ == "__main__":
+    main()
